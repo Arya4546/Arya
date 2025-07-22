@@ -7,7 +7,7 @@ const app = express();
 
 
 app.use(cors({
-  origin: '*',
+  origin: 'https://arya-gules.vercel.app/',
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
 }));
