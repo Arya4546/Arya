@@ -6,6 +6,7 @@ import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Projects from './components/sections/Projects';
+import Testimonials from "./components/sections/Testimonials";
 import Contact from './components/sections/Contact';
 import Footer from './components/layout/Footer';
 import ScrollProgress from './components/layout/ScrollProgress';
@@ -131,6 +132,18 @@ const App = () => {
       </motion.div>
 
       <motion.div
+       className="relative z-20 bg-transparent"
+        initial={{ y: '20vh' }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+        viewport={{ once: false, margin: '-20%' }}
+        style={{ willChange: 'transform' }}
+      >
+        <Testimonials />
+
+      </motion.div>
+
+      <motion.div
         className="relative z-30 bg-transparent"
         initial={{ y: '20vh' }}
         whileInView={{ y: 0 }}
@@ -140,6 +153,7 @@ const App = () => {
       >
         <Contact />
       </motion.div>
+      
 
     <Footer />
 <ScrollProgress scrollYProgress={scrollYProgressSpring} />
