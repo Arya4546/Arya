@@ -5,6 +5,7 @@ require('dotenv').config();
 
 const app = express();
 
+
 app.use(cors({
   origin: 'https://arya-gules.vercel.app',
   methods: ['GET', 'POST'],
@@ -24,7 +25,7 @@ const transporter = nodemailer.createTransport({
 app.post('/api/send-email', async (req, res) => {
   const { name, email, message } = req.body;
 
-  const mailOptions = {
+const mailOptions = {
     from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
     to: process.env.EMAIL_TO,
     subject: `📩 New Contact Form Submission from ${name}`,
@@ -76,4 +77,4 @@ app.post('/api/send-email', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(` Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
